@@ -1,5 +1,13 @@
 const { User, Thought } = require('../models');
 
+/*
+// Aggregate function to get the number of students overall
+const friendCount = async () => {
+    const numberOfFriends = await User.aggregate()
+      .count('numberOfFriends');
+    return numberOfFriends;
+  } */
+
 module.exports = {
   // Get all users
   async getUsers(req, res) {
