@@ -68,7 +68,7 @@ module.exports = {
     }
   },
   // add a new friend
-  async updateUser(req, res) {
+  async addFriend(req, res) {
     //console.log("adding a friend");
     try {
         const user = await User.findOneAndUpdate(
@@ -81,13 +81,13 @@ module.exports = {
             return res.status(404).json({ message: 'No user with that ID' });
         }
 
-        res.json({ message: 'User updated deleted!' })
+        res.json({ message: `${req.params.friendId} is now your friend!` })
     } catch (err) {
       res.status(500).json(err);
     }
   },
   // Delete a friend from friend list
-  async deleteUser(req, res) {
+  async removeFriend(req, res) {
     try {
         const user = await User.findOneAndUpdate(
             { _id: req.params.userId },
@@ -100,7 +100,7 @@ module.exports = {
         }
 
         await Thought.deleteMany({ _id: { $in: user.thoughts } });
-        res.json({ message: `User ${req.params.friendId} is no longer your friend` })
+        res.json({ message: `${req.params.friendId} is no longer your friend :'(` })
     } catch (err) {
       res.status(500).json(err);
     }
