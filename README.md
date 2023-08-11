@@ -21,6 +21,8 @@ You will need to download the files localy from Gighub and run 'npm install' in 
     
 There are a series of get, post, put, and delete api calls that can be run. Please navigate to the Insomnia folder and download the socialNetworkAPI_Insomnia which you can import locally to run the api calls.
 
+[Walkthrough video](https://drive.google.com/file/d/1qCxkoFqkvvlGWqeQmm195ZbGiSAGDDxW/view)
+
 ## Credits
 
 Insomnia
